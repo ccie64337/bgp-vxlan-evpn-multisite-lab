@@ -87,4 +87,4 @@ create a SHA-based credential or manage the few static routes once via console.
 ## Symmetry risk
 
 ECMP `maximum-paths 64` can still cause asymmetric inter-site paths in some
-failover scenarios. Test 08 in the phase 2 log covers this.
+failover scenarios; test it explicitly when changing the ECMP maximum-paths.

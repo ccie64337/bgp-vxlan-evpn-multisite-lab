@@ -1,8 +1,6 @@
 # Build Guide
 
-This is the condensed build sequence. The detailed log (including the exact
-NDFC policies and the issues hit) is in
-[`phase2-red-blue-shared-build.md`](phase2-red-blue-shared-build.md).
+This is the build sequence for the lab.
 
 ## 1. EVE-NG images and nodes
 
@@ -35,8 +33,7 @@ Cabling used in this build:
    DC02.
 4. C8K01 is discovered in `EDGE-WAN` but is **not manageable** in NDFC 4.2.1.10
    because the default SNMPv3 credential is MD5 and IOS-XE 17.15 forbids MD5.
-   The C8K01 static routes in this build were applied once via console (see
-   `c8000v-edge-ndfc-rebuild.md`).
+   The C8K01 static routes in this build were applied once via console.
 
 ## 3. Underlay / overlay
 

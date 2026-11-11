@@ -79,17 +79,13 @@ FTD02: ICMP outside 10.11.10.11  inside  10.22.10.21
 │   ├── c8k01/                    # C8K01 running-config
 │   └── ftd/                      # FTD01/02 running-config
 ├── ndfc/                         # NDFC fabrics, VRFs, networks, policies, sync
-├── docs/
-│   ├── architecture.md
-│   ├── ip-plan.md
-│   ├── build-guide.md
-│   ├── validation.md
-│   ├── troubleshooting.md
-│   ├── linux-host-image.md
-│   ├── phase1-compatibility.md
-│   ├── phase2-red-blue-shared-build.md
-│   └── c8000v-edge-ndfc-rebuild.md
-└── scripts/                      # export / screenshot helpers
+└── docs/
+    ├── architecture.md
+    ├── ip-plan.md
+    ├── build-guide.md
+    ├── validation.md
+    ├── troubleshooting.md
+    └── linux-host-image.md
 ```
 
 ## Prerequisites
@@ -125,8 +121,6 @@ text box removed. Use your own lab credentials.
 - [Validation](docs/validation.md)
 - [Troubleshooting / gotchas](docs/troubleshooting.md)
 - [Linux host image](docs/linux-host-image.md)
-- [Phase 1 compatibility](docs/phase1-compatibility.md)
-- [Phase 2 build log](docs/phase2-red-blue-shared-build.md)
 
 ## Disclaimer
 
