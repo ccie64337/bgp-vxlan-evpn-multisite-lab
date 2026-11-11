@@ -31,6 +31,16 @@ the site the host lives in.
 - **Hosts**: four Debian 12 VMs (EP11, EP12, EP21, EP22) on a custom
   `linux-host` image.
 
+## NDFC screens
+
+| | |
+|---|---|
+| ![Fabrics](ndfc/screenshots/fabrics_list.png) | ![DC01 inventory](ndfc/screenshots/dc01_inventory.png) |
+| ![DC01 networks](ndfc/screenshots/dc01_segmentation.png) | ![DC01 VRFs](ndfc/screenshots/dc01_vrfs.png) |
+
+More views (DC01 overview, policies, topology, DC02) in
+[`ndfc/screenshots/`](ndfc/screenshots/).
+
 ## Address / ASN quick reference
 
 | Item | Value |
@@ -79,6 +89,7 @@ FTD02: ICMP outside 10.11.10.11  inside  10.22.10.21
 │   ├── c8k01/                    # C8K01 running-config
 │   └── ftd/                      # FTD01/02 running-config
 ├── ndfc/                         # NDFC fabrics, VRFs, networks, policies, sync
+│   └── screenshots/              # NDFC UI captures
 └── docs/
     ├── architecture.md
     ├── ip-plan.md
