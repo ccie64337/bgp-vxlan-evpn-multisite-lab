@@ -53,6 +53,49 @@ C8K01 return routes (`VRF-OUTSIDE`):
 10.99.99.22/32  -> 10.100.20.1
 ```
 
+## NX-OS verification commands
+
+### Underlay / EVPN / VXLAN
+
+| Check | Command | Expected |
+|---|---|---|
+| NVE peers | `show nve peers` | peer VTEPs Up |
+| NVE VNIs | `show nve vni` | L2/L3 VNIs Up; multicast group |
+| EVPN BGP | `show bgp l2vpn evpn summary` | Established, prefixes |
+| EVPN routes | `show bgp l2vpn evpn` | Type-2 (MAC/IP) + Type-5 (prefix) |
+| Type-5 DCI | `show bgp l2vpn evpn route-type prefix` | remote-site prefixes |
+| Multicast BUM | `show ip mroute vrf <vrf>` | `(*,G)` / `(S,G)` entries |
+
+### VRF routing and BGP
+
+| Check | Command | Expected |
+|---|---|---|
+| VRF route table | `show ip route vrf red-in` / `blue-in` / `t1-in` / `red-out` / `blue-out` / `shared-out` | local + EVPN routes |
+| FTD eBGP (leaf) | `show bgp ipv4 unicast summary vrf red-in` (etc.) | `10.255.x.1` AS 65100/65101 Established |
+| T1-IN host `/32` | `show bgp ipv4 unicast vrf t1-in \| include 10.99.99` | `/32` via EVPN (`segid 50002`) |
+| BGW leaks | `show ip route vrf shared-out` | `10.11.10.0/24`, `10.22.10.0/24`, `10.99.99.0/24` + `/32`s |
+| BGW DCI | `show bgp ipv4 unicast summary vrf shared-out` | C8K01 + remote BGW Established |
+| C8K01 return | `show ip route vrf VRF-OUTSIDE` | `.12/32 → 10.100.10.1`, `.22/32 → 10.100.20.1` |
+
+### Anycast gateway / hosts
+
+| Check | Command | Expected |
+|---|---|---|
+| Anycast MAC | `show fabric forwarding anycast-gateway-mac` | `2020.0000.00aa` |
+| SVI mode | `show running-config interface vlan2399` | `fabric forwarding mode anycast-gateway` |
+| ARP | `show ip arp vrf t1-in` | EP12/EP22 IP → MAC on `Vlan2399` |
+| MAC table | `show mac address-table vlan 2399` | host MAC on the leaf port |
+| EVPN MAC/IP | `show l2route evpn mac ip` | host MAC/IP entries |
+
+### FTD peering (both sides)
+
+| Side | Command | Expected |
+|---|---|---|
+| Leaf | `show bgp ipv4 unicast summary vrf red-in` | `10.255.10.1` AS 65100 |
+| Leaf | `show bgp ipv4 unicast summary vrf t1-in` | `10.255.98.1` AS 65100 |
+| Leaf | `show bgp ipv4 unicast summary vrf red-out` | `10.255.20.1` AS 65100 |
+| FTD | `show bgp summary` | `10.255.10.4` / `.98.4` / `.20.4` AS 65001 |
+
 ## NDFC sync
 
 | Fabric | Switches | State |
@@ -65,18 +108,40 @@ overview (`Out-of-Sync: 0`).
 
 ## Reproduce
 
+On the hosts:
+
 ```bash
-# host tests (console ports are tenant-1; adjust to your build)
-python3 linux_console.py <EP11-port> "ping -c 5 10.22.10.21"
-python3 linux_console.py <EP12-port> "ping -c 5 1.1.1.1"
+ping -c 5 10.22.10.21      # EP11 -> EP21
+ping -c 5 1.1.1.1          # EP12 -> Internet
+```
 
-# firewall state
-python3 ftd_show.py 10.0.0.51 "show conn address 10.11.10.11"
-python3 ftd_show.py 10.0.0.52 "show conn address 10.11.10.11"
+On a leaf/BGW (NX-OS):
 
-# leaf EVPN host routes
-python3 nxshow2.py 10.0.0.12 "show ip route vrf t1-in"
+```bash
+show nve peers
+show nve vni
+show bgp l2vpn evpn summary
+show bgp l2vpn evpn route-type prefix
+show ip route vrf t1-in
+show ip route vrf shared-out
+show ip arp vrf t1-in
+show mac address-table vlan 2399
+show bgp ipv4 unicast summary vrf red-in
+show bgp ipv4 unicast summary vrf t1-in
+show bgp ipv4 unicast summary vrf red-out
+```
 
-# NDFC sync
-python3 nd_pcount.py
+On the FTD:
+
+```bash
+show conn address 10.11.10.11
+show conn address 10.99.99.12
+show bgp summary
+```
+
+NDFC pending config:
+
+```bash
+curl -k -H "AuthCookie: $TOKEN" \
+  https://10.0.0.40/appcenter/cisco/ndfc/api/v1/lan-fabric/rest/control/fabrics/DC01/pendingConfig/9C6HJAC4YZD
 ```
