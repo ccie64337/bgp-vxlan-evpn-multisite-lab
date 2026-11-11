@@ -15,6 +15,7 @@ python3 export_ndfc.py
 Writes `ndfc/fabrics.json`, `ndfc/<fabric>_vrfs.json`,
 `ndfc/<fabric>_networks.json`, `ndfc/<fabric>_*_attachments.json`,
 `ndfc/policies_<switch>.json`, and `ndfc/pending_<switch>.json`.
+The committed repo keeps the filtered `ndfc/effective_policies_<switch>.json`.
 
 ## `export_configs.py`
 

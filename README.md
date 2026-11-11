@@ -88,8 +88,7 @@ FTD02: ICMP outside 10.11.10.11  inside  10.22.10.21
 │   ├── linux-host-image.md
 │   ├── phase1-compatibility.md
 │   ├── phase2-red-blue-shared-build.md
-│   ├── c8000v-edge-ndfc-rebuild.md
-│   └── cisco-dc-segmentation-references.md
+│   └── c8000v-edge-ndfc-rebuild.md
 └── scripts/                      # export / screenshot helpers
 ```
 
@@ -108,7 +107,7 @@ FTD02: ICMP outside 10.11.10.11  inside  10.22.10.21
 2. Build/import the `linux-host` image (see `docs/linux-host-image.md`).
 3. Onboard the switches into NDFC (`MSD` → `DC01`/`DC02`) and the FTDs into FMC.
 4. Apply the NDFC freeform policies (see `docs/build-guide.md` and
-   `ndfc/policies_*.json`).
+   `ndfc/effective_policies_*.json`).
 5. Set the host IPs from `docs/ip-plan.md`.
 6. Run the tests in `docs/validation.md`.
 

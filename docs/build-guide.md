@@ -131,7 +131,8 @@ both FTDs in the inter-site path, and NDFC 8/8 In-Sync.
 
 ## NDFC policy reference
 
-The exported policies are in `ndfc/policies_*.json`. Key policies:
+The effective (non-`NA`) policies are in `ndfc/effective_policies_*.json`.
+Key policies:
 
 | Policy | Device | Purpose |
 |---|---|---|
