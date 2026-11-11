@@ -1,0 +1,260 @@
+{
+  "fabrics": {
+    "DC01": {
+      "vrfs": [
+        [
+          "T1-IN",
+          50002,
+          "DEPLOYED"
+        ],
+        [
+          "SHARED-OUT",
+          50010,
+          "DEPLOYED"
+        ],
+        [
+          "BLUE-OUT",
+          50009,
+          "NA"
+        ],
+        [
+          "RED-OUT",
+          50007,
+          "DEPLOYED"
+        ],
+        [
+          "BLUE-IN",
+          50008,
+          "NA"
+        ],
+        [
+          "RED-IN",
+          50006,
+          "DEPLOYED"
+        ]
+      ],
+      "networks": [
+        [
+          "RED-NET",
+          30111,
+          "DEPLOYED"
+        ],
+        [
+          "BLUE-NET",
+          30211,
+          "NA"
+        ],
+        [
+          "T1-NET",
+          30999,
+          "DEPLOYED"
+        ]
+      ]
+    },
+    "DC02": {
+      "vrfs": [
+        [
+          "T1-IN",
+          50002,
+          "DEPLOYED"
+        ],
+        [
+          "SHARED-OUT",
+          50010,
+          "DEPLOYED"
+        ],
+        [
+          "BLUE-OUT",
+          50009,
+          "DEPLOYED"
+        ],
+        [
+          "RED-OUT",
+          50007,
+          "NA"
+        ],
+        [
+          "RED-IN",
+          50006,
+          "NA"
+        ],
+        [
+          "BLUE-IN",
+          50008,
+          "DEPLOYED"
+        ]
+      ],
+      "networks": [
+        [
+          "RED-NET",
+          30111,
+          "NA"
+        ],
+        [
+          "BLUE-NET",
+          30211,
+          "DEPLOYED"
+        ],
+        [
+          "T1-NET",
+          30999,
+          "DEPLOYED"
+        ]
+      ]
+    },
+    "MSD": {
+      "vrfs": [
+        [
+          "BLUE-IN",
+          50008,
+          "DEPLOYED"
+        ],
+        [
+          "SHARED-OUT",
+          50010,
+          "DEPLOYED"
+        ],
+        [
+          "RED-IN",
+          50006,
+          "DEPLOYED"
+        ],
+        [
+          "BLUE-OUT",
+          50009,
+          "DEPLOYED"
+        ],
+        [
+          "T1-IN",
+          50002,
+          "DEPLOYED"
+        ],
+        [
+          "RED-OUT",
+          50007,
+          "DEPLOYED"
+        ]
+      ],
+      "networks": [
+        [
+          "T1-NET",
+          30999,
+          "DEPLOYED"
+        ],
+        [
+          "BLUE-NET",
+          30211,
+          "DEPLOYED"
+        ],
+        [
+          "RED-NET",
+          30111,
+          "DEPLOYED"
+        ]
+      ]
+    },
+    "EDGE-WAN": {
+      "vrfs": [],
+      "networks": []
+    }
+  },
+  "switches": {
+    "BGW11": {
+      "fabric": "DC01",
+      "serial": "91AJCZEKJI3",
+      "policies": 338,
+      "pending_lines": 0
+    },
+    "LF11": {
+      "fabric": "DC01",
+      "serial": "9BSWEY15TPZ",
+      "policies": 129,
+      "pending_lines": 0
+    },
+    "LF12": {
+      "fabric": "DC01",
+      "serial": "9C6HJAC4YZD",
+      "policies": 129,
+      "pending_lines": 0
+    },
+    "SPN11": {
+      "fabric": "DC01",
+      "serial": "9WN8QQVOXNS",
+      "policies": 320,
+      "pending_lines": 0
+    },
+    "BGW21": {
+      "fabric": "DC02",
+      "serial": "9JPAF7UCYNL",
+      "policies": 338,
+      "pending_lines": 0
+    },
+    "LF21": {
+      "fabric": "DC02",
+      "serial": "9EYZ9KQO8D8",
+      "policies": 129,
+      "pending_lines": 0
+    },
+    "LF22": {
+      "fabric": "DC02",
+      "serial": "95TVRFRXMX8",
+      "policies": 130,
+      "pending_lines": 0
+    },
+    "SPN21": {
+      "fabric": "DC02",
+      "serial": "98FQ3BJPX2I",
+      "policies": 320,
+      "pending_lines": 0
+    }
+  },
+  "service_insertion": {
+    "DC01": [],
+    "DC02": [],
+    "MSD": [],
+    "EDGE-WAN": {
+      "code": "InvalidRequest",
+      "detail": "Invalid request is supplied. The fabric EDGE-WAN is invalid."
+    }
+  },
+  "overview": {
+    "DC01": {
+      "switchSWVersions": {
+        "10.6(3)": 4
+      },
+      "switchHealth": {
+        "Minor": 4
+      },
+      "switchHWVersions": {
+        "N9K-C9300v": 4
+      },
+      "switchConfig": {
+        "In-Sync": 4
+      },
+      "switchRoles": {
+        "leaf": 2,
+        "spine": 1,
+        "border gateway": 1
+      }
+    },
+    "DC02": {
+      "switchSWVersions": {
+        "10.6(3)": 4
+      },
+      "switchHealth": {
+        "Minor": 4
+      },
+      "switchHWVersions": {
+        "N9K-C9300v": 4
+      },
+      "switchConfig": {
+        "In-Sync": 4
+      },
+      "switchRoles": {
+        "leaf": 2,
+        "spine": 1,
+        "border gateway": 1
+      }
+    }
+  }
+}

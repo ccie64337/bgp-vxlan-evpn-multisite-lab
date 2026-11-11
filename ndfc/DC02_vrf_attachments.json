@@ -1,0 +1,302 @@
+[
+  {
+    "vrfName": "BLUE-IN",
+    "lanAttachList": [
+      {
+        "vrfName": "BLUE-IN",
+        "switchName": "LF21",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "9EYZ9KQO8D8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.21",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 2021,
+        "vrfId": 50008,
+        "entityName": "BLUE-IN"
+      },
+      {
+        "vrfName": "BLUE-IN",
+        "switchName": "LF22",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "95TVRFRXMX8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.22",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 2021,
+        "vrfId": 50008,
+        "entityName": "BLUE-IN"
+      },
+      {
+        "vrfName": "BLUE-IN",
+        "switchName": "BGW21",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "9JPAF7UCYNL",
+        "peerSerialNo": null,
+        "switchRole": "border gateway",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.23",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50008,
+        "entityName": null
+      }
+    ]
+  },
+  {
+    "vrfName": "RED-OUT",
+    "lanAttachList": [
+      {
+        "vrfName": "RED-OUT",
+        "switchName": "BGW21",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "9JPAF7UCYNL",
+        "peerSerialNo": null,
+        "switchRole": "border gateway",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.23",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50007,
+        "entityName": null
+      },
+      {
+        "vrfName": "RED-OUT",
+        "switchName": "LF21",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "9EYZ9KQO8D8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.21",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50007,
+        "entityName": null
+      },
+      {
+        "vrfName": "RED-OUT",
+        "switchName": "LF22",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "95TVRFRXMX8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.22",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50007,
+        "entityName": null
+      }
+    ]
+  },
+  {
+    "vrfName": "T1-IN",
+    "lanAttachList": [
+      {
+        "vrfName": "T1-IN",
+        "switchName": "BGW21",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "9JPAF7UCYNL",
+        "peerSerialNo": null,
+        "switchRole": "border gateway",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.23",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 2031,
+        "vrfId": 50002,
+        "entityName": "T1-IN"
+      },
+      {
+        "vrfName": "T1-IN",
+        "switchName": "LF21",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "9EYZ9KQO8D8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.21",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 2031,
+        "vrfId": 50002,
+        "entityName": "T1-IN"
+      },
+      {
+        "vrfName": "T1-IN",
+        "switchName": "LF22",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "95TVRFRXMX8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.22",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 2031,
+        "vrfId": 50002,
+        "entityName": "T1-IN"
+      }
+    ]
+  },
+  {
+    "vrfName": "RED-IN",
+    "lanAttachList": [
+      {
+        "vrfName": "RED-IN",
+        "switchName": "BGW21",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "9JPAF7UCYNL",
+        "peerSerialNo": null,
+        "switchRole": "border gateway",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.23",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50006,
+        "entityName": null
+      },
+      {
+        "vrfName": "RED-IN",
+        "switchName": "LF21",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "9EYZ9KQO8D8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.21",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50006,
+        "entityName": null
+      },
+      {
+        "vrfName": "RED-IN",
+        "switchName": "LF22",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "95TVRFRXMX8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.22",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50006,
+        "entityName": null
+      }
+    ]
+  },
+  {
+    "vrfName": "SHARED-OUT",
+    "lanAttachList": [
+      {
+        "vrfName": "SHARED-OUT",
+        "switchName": "BGW21",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "9JPAF7UCYNL",
+        "peerSerialNo": null,
+        "switchRole": "border gateway",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.23",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 3030,
+        "vrfId": 50010,
+        "entityName": "SHARED-OUT"
+      },
+      {
+        "vrfName": "SHARED-OUT",
+        "switchName": "LF21",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "9EYZ9KQO8D8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.21",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50010,
+        "entityName": null
+      },
+      {
+        "vrfName": "SHARED-OUT",
+        "switchName": "LF22",
+        "lanAttachState": "NA",
+        "isLanAttached": false,
+        "switchSerialNo": "95TVRFRXMX8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.22",
+        "instanceValues": "",
+        "vlanId": null,
+        "vrfId": 50010,
+        "entityName": null
+      }
+    ]
+  },
+  {
+    "vrfName": "BLUE-OUT",
+    "lanAttachList": [
+      {
+        "vrfName": "BLUE-OUT",
+        "switchName": "BGW21",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "9JPAF7UCYNL",
+        "peerSerialNo": null,
+        "switchRole": "border gateway",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.23",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 3022,
+        "vrfId": 50009,
+        "entityName": "BLUE-OUT"
+      },
+      {
+        "vrfName": "BLUE-OUT",
+        "switchName": "LF21",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "9EYZ9KQO8D8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.21",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 3022,
+        "vrfId": 50009,
+        "entityName": "BLUE-OUT"
+      },
+      {
+        "vrfName": "BLUE-OUT",
+        "switchName": "LF22",
+        "lanAttachState": "DEPLOYED",
+        "isLanAttached": true,
+        "switchSerialNo": "95TVRFRXMX8",
+        "peerSerialNo": null,
+        "switchRole": "leaf",
+        "fabricName": "DC02",
+        "ipAddress": "10.0.0.22",
+        "instanceValues": "{\"deviceSupportL3VniNoVlan\":\"false\"}",
+        "vlanId": 3022,
+        "vrfId": 50009,
+        "entityName": "BLUE-OUT"
+      }
+    ]
+  }
+]
